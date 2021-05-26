@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Toolbar = ({ className, searchUsers, ...rest }) => {
   const classes = useStyles();
-  const [type, setType] = useState('');
+  const [type, setType] = useState('all');
   const [query, setQuery] = useState('');
 
   const handleChange = (event) => {
@@ -93,9 +93,7 @@ const Toolbar = ({ className, searchUsers, ...rest }) => {
                     onChange={handleChange}
                     label="type"
                   >
-                    <MenuItem value="">
-                      <em>None</em>
-                    </MenuItem>
+
                     <MenuItem value={'all'}>All</MenuItem>
                     <MenuItem value={'customers'}>Customers</MenuItem>
                     <MenuItem value={'beauticians'}>Beauticians</MenuItem>

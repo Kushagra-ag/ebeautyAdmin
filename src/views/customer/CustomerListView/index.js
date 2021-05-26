@@ -30,12 +30,13 @@ const CustomerListView = () => {
     let data = null;
     console.log('type ', type);
 
-    data = type == 'beauticians' ? {isSeller: true} : {isSeller: false};
+    data = type !== 'all' ? (type == 'beauticians' ? {isSeller: true} : {isSeller: false}) : null;
+    data = {...data, query: query};
     console.log(data);
 
     const success = (data) => {
       setError(null);
-      updateCustomers(data.users);
+      updateCustomers(data.content.hits);
     }
 
     const failure = () => {

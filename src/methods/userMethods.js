@@ -9,7 +9,7 @@ export const getUsers = (data, page=0, type, success, failure) => {
 
 
 	axios.
-		post(`${API}/users?page=${page}`, data, {
+		get(`${API}/search/usersearch?page=${page}&isSeller=${data.isSeller}&query=${data.query}`, {
 			headers: options
 		})
 		.then(res => {
