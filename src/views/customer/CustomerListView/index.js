@@ -25,7 +25,7 @@ const CustomerListView = () => {
   const [page, setPage] = useState(0);
   const [error, setError] = useState(null);
 
-  const searchUsers = (type='', query='') => {
+  const searchUsers = (type='all', query='') => {
 
     let data = null;
     console.log('type ', type);
